@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct song {
+    char title[50];
+	char artist[50];
+	int duration;
+	struct song* next;
+} song;
+
+struct songPlaylist[10] = {
+	{1, 'Past Self', 'Sleep Token', 214},
+	{2, 'Frozen', 'Rain City Drive', 215},
+	{3, 'Afterlife', 'Awaken I Am', 182},
+	{4, 'The Reason', 'Hoobastank', 232},
+	{5, 'Almost Ecstacy', 'Wind Walkers', 244},
+	{6, 'Tightrope', 'Awaken I Am', 198},
+	{7, 'Follow You', 'Bring Me The Horizon', 198},
+	{8, 'Crawl Back To My Coffin', 'Dayseeker', 242},
+	{9, 'Chokehold', 'Sleep Token', 305},
+	{10, 'Look to Windward', 'Sleep Token', 466}
+};
+int count = 10;
+
+int main() {
+	printf("Song\t\tTitle\t\tArtist\t\tDuration (sec)\n");
+	for (int i=0; i<count; i++) {
+		printf("%d. %s - %s\n", i + 1, songplaylist[i].title, songplaylist[i].artist);
+	}
+	
+	
+	
+	
+}
