@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct song {
+    char title[50];
+	char artist[50];
+	int duration;
+	struct song* next;
+} song;
+
+struct song viewplaylist[10] = {
+	{"Past Self", "Sleep Token", 214, NULL},
+	{"Frozen", "Rain City Drive", 215, NULL},
+	{"Afterlife", "Awaken I Am", 182, NULL},
+	{"The Reason", "Hoobastank", 232, NULL},
+	{"Almost Ecstasy", "Wind Walkers", 244, NULL},
+	{"Tightrope", "Awaken I Am", 198, NULL},
+	{"Follow You", "Bring Me The Horizon", 198, NULL},
+	{"Crawl Back To My Coffin", "Dayseeker", 242, NULL},
+	{"Chokehold", "Sleep Token", 305, NULL},
+	{"Look To Windward", "Sleep Token", 466, NULL}
+};
+void menu() {
+	printf("1. View Playlist\n2. Play\n3. Check Playlist\n4.Exit\n");
+}
+int count = 10;
+
+void isEmpty() {
+    if (count == 0) {
+        printf("The playlist is empty."); 
+    } else {
+        printf("The playlist is not empty.");
+    }
+}
+
+int main() {
+	int choice; 
+	menu();
+	printf("Enter choice: ");
+	scanf("%d", &choice);
+	
+	if (choice == 1) {
+		printf("Song\t\tTitle\t\tArtist\t\tDuration (sec)\n");
+	    for (int i=0; i<count; i++) {
+		    printf("%d. %s - %s (%d sec)\n", i + 1, 
+			    viewplaylist[i].title, 
+				viewplaylist[i].artist,
+				viewplaylist[i].duration);
+	    }
+	}
+    if (choice == 3) {
+        isEmpty();
+    }
+	return 0;
+}	
